@@ -501,6 +501,44 @@ h3 {
 
 
 /* =========================================================
+   EMOJI BADGES
+   ========================================================= */
+
+.emoji-badge,
+.feature-icon {
+  width: 58px;
+  height: 58px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: var(--accent-soft);
+
+  border: 1px solid rgba(34, 199, 201, 0.20);
+
+  border-radius: 18px;
+
+  font-size: 27px;
+
+  line-height: 1;
+}
+
+.emoji-badge {
+  margin-bottom: 24px;
+}
+
+.emoji-badge-dark {
+  background: rgba(255, 255, 255, 0.08);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.14);
+}
+
+
+/* =========================================================
    PROBLEM
    ========================================================= */
 
@@ -516,7 +554,7 @@ h3 {
 }
 
 .problem-grid article {
-  padding: 34px 30px 0 0;
+  padding: 38px 30px 0 0;
 }
 
 .problem-grid article + article {
@@ -525,18 +563,8 @@ h3 {
   border-left: 1px solid #cfd8d6;
 }
 
-.problem-grid span,
-.feature-number {
-  color: var(--accent-dark);
-
-  font-size: 13px;
-  font-weight: 800;
-
-  letter-spacing: 0.08em;
-}
-
 .problem-grid h3 {
-  margin-top: 28px;
+  margin-top: 0;
 }
 
 .problem-grid p {
@@ -598,7 +626,7 @@ h3 {
 
   color: var(--text-soft);
 
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .feature-visual strong {
@@ -626,11 +654,14 @@ h3 {
 }
 
 .payment-visual > div {
-  padding: 13px 0;
+  padding: 15px 0;
 
   display: flex;
 
   justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
 
   border-bottom: 1px solid var(--border);
 }
@@ -639,10 +670,14 @@ h3 {
   border-bottom: 0;
 }
 
+.payment-visual span {
+  font-size: 15px;
+}
+
 .payment-visual strong {
   margin: 0;
 
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .progress-track {
@@ -689,9 +724,9 @@ h3 {
 }
 
 .steps-grid article {
-  min-height: 260px;
+  min-height: 280px;
 
-  padding: 30px;
+  padding: 32px;
 
   border-top:
     1px solid rgba(255, 255, 255, 0.20);
@@ -704,15 +739,8 @@ h3 {
   border-left: 0;
 }
 
-.steps-grid span {
-  color: var(--accent);
-
-  font-size: 34px;
-  font-weight: 600;
-}
-
 .steps-grid h3 {
-  margin-top: 40px;
+  margin-top: 0;
 }
 
 .steps-grid p {
@@ -971,7 +999,7 @@ h3 {
 
   .feature-row {
     grid-template-columns:
-      50px
+      58px
       1fr;
 
     gap: 30px;
@@ -1119,6 +1147,16 @@ h3 {
     margin-top: 50px;
   }
 
+  .emoji-badge,
+  .feature-icon {
+    width: 54px;
+    height: 54px;
+
+    border-radius: 16px;
+
+    font-size: 25px;
+  }
+
   .feature-row {
     padding: 50px 0;
 
@@ -1127,7 +1165,7 @@ h3 {
     gap: 20px;
   }
 
-  .feature-number {
+  .feature-icon {
     grid-column: 1;
   }
 
@@ -1158,7 +1196,7 @@ h3 {
   }
 
   .steps-grid h3 {
-    margin-top: 22px;
+    margin-top: 0;
   }
 
   .split-section,
