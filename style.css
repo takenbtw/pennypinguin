@@ -1,967 +1,1072 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>
-    PennyPinguin – Deine Finanzen. Einfach im Blick.
-  </title>
-
-  <meta
-    name="description"
-    content="PennyPinguin ist deine persönliche Finanz-App für iPhone. Behalte Einnahmen, Ausgaben, Zahlungen, Finanzierungen und dein freies Budget einfach im Blick."
-  >
-
-  <meta
-    name="theme-color"
-    content="#22C7C9"
-  >
-
-  <meta
-    property="og:title"
-    content="PennyPinguin – Deine Finanzen. Einfach im Blick."
-  >
-
-  <meta
-    property="og:description"
-    content="Eine persönliche Finanz-App für iPhone – klar, lokal und ohne Bankverbindung."
-  >
-
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <meta
-    property="og:url"
-    content="https://pennypinguin.de/"
-  >
-
-  <link
-    rel="canonical"
-    href="https://pennypinguin.de/"
-  >
-
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
-</head>
-
-<body>
-
-  <!-- =====================================================
-       HEADER
-       ===================================================== -->
-
-  <header class="site-header">
-
-    <div class="container header-inner">
-
-      <a
-        class="brand"
-        href="#top"
-        aria-label="PennyPinguin Startseite"
-      >
-        <span class="brand-mark">
-          P
-        </span>
-
-        <span>
-          PennyPinguin
-        </span>
-      </a>
-
-      <nav
-        class="navigation"
-        aria-label="Hauptnavigation"
-      >
-        <a href="#warum">
-          Warum PennyPinguin?
-        </a>
+:root {
+  --accent: #22c7c9;
+  --accent-dark: #11989a;
+  --accent-soft: #eafafa;
 
-        <a href="#funktionen">
-          Funktionen
-        </a>
+  --text: #121a1c;
+  --text-soft: #647074;
 
-        <a href="#datenschutz">
-          Datenschutz
-        </a>
-      </nav>
+  --white: #ffffff;
+  --soft: #f3f6f5;
+  --border: #dfe6e4;
 
-      <a
-        class="header-cta"
-        href="#app-store"
-      >
-        Bald im App Store
-      </a>
+  --dark: #152224;
+  --dark-soft: #223234;
 
-    </div>
+  --container: 1180px;
+}
 
-  </header>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+html {
+  scroll-behavior: smooth;
+}
 
-  <!-- =====================================================
-       MAIN
-       ===================================================== -->
+body {
+  margin: 0;
 
-  <main id="top">
+  background: var(--white);
+  color: var(--text);
 
-    <!-- ===================================================
-         HERO
-         =================================================== -->
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif;
 
-    <section class="hero">
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
 
-      <div class="container hero-grid">
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-        <div class="hero-copy">
+.container {
+  width: min(
+    calc(100% - 48px),
+    var(--container)
+  );
 
-          <p class="eyebrow">
-            Persönliche Finanzen fürs iPhone
-          </p>
+  margin-inline: auto;
+}
 
-          <h1>
-            Deine Finanzen.<br>
-            Einfach im Blick.
-          </h1>
 
-          <p class="hero-lead">
-            Einnahmen, Ausgaben, Zahlungen und Finanzierungen
-            an einem Ort – ohne komplizierte Banking-Funktionen.
-          </p>
+/* HEADER */
 
-          <p class="hero-description">
-            PennyPinguin hilft dir dabei, deinen Monat zu planen,
-            offene Zahlungen im Blick zu behalten und sofort zu
-            sehen, was dir wirklich noch zur Verfügung steht.
-          </p>
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
 
-          <div class="hero-actions">
+  background: rgba(255, 255, 255, 0.95);
 
-            <a
-              class="button button-primary"
-              href="#app-store"
-            >
-              Bald im App Store
-            </a>
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 
-            <a
-              class="simple-link"
-              href="#funktionen"
-            >
-              Funktionen entdecken →
-            </a>
+  border-bottom: 1px solid var(--border);
+}
 
-          </div>
+.header-inner {
+  min-height: 78px;
 
-          <div class="hero-facts">
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
 
-            <span>
-              Kein Account
-            </span>
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
 
-            <span>
-              Keine Bankverbindung
-            </span>
+  font-size: 19px;
+  font-weight: 800;
 
-            <span>
-              Kein Abo
-            </span>
+  letter-spacing: -0.03em;
+}
 
-          </div>
+.brand-mark {
+  width: 38px;
+  height: 38px;
 
-        </div>
+  display: grid;
+  place-items: center;
 
+  border-radius: 50%;
 
-        <div class="app-preview">
+  background: var(--accent);
+  color: #063f40;
 
-          <div class="preview-top">
+  font-weight: 900;
+}
 
-            <span class="preview-brand">
-              🐧 PennyPinguin
-            </span>
+.navigation {
+  margin-left: auto;
 
-            <span class="preview-plus">
-              +
-            </span>
+  display: flex;
+  gap: 30px;
+}
 
-          </div>
+.navigation a {
+  color: var(--text-soft);
 
+  font-size: 14px;
+  font-weight: 600;
+}
 
-          <div class="preview-main">
+.navigation a:hover {
+  color: var(--text);
+}
 
-            <span>
-              Freies Budget
-            </span>
+.header-cta {
+  padding: 11px 17px;
 
-            <strong>
-              1.247,50 €
-            </strong>
+  border: 1px solid var(--text);
+  border-radius: 100px;
 
-            <small>
-              nach allen geplanten Einnahmen und Ausgaben
-            </small>
+  font-size: 13px;
+  font-weight: 700;
+}
 
-          </div>
 
+/* TYPOGRAFIE */
 
-          <div class="preview-grid">
+.eyebrow {
+  margin: 0 0 18px;
 
-            <div>
+  color: var(--accent-dark);
 
-              <span>
-                Einnahmen
-              </span>
+  font-size: 13px;
+  font-weight: 800;
 
-              <strong>
-                3.250 €
-              </strong>
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
 
-            </div>
+.eyebrow-light {
+  color: #61dcde;
+}
 
-            <div>
+h1,
+h2,
+h3,
+p {
+  text-wrap: pretty;
+}
 
-              <span>
-                Ausgaben
-              </span>
+h1 {
+  margin: 0;
 
-              <strong>
-                2.002,50 €
-              </strong>
+  max-width: 760px;
 
-            </div>
+  font-size: clamp(58px, 7vw, 92px);
+  line-height: 0.98;
 
-          </div>
+  letter-spacing: -0.065em;
+  font-weight: 680;
+}
 
+h2 {
+  margin: 0;
 
-          <div class="preview-section">
+  font-size: clamp(42px, 5vw, 66px);
+  line-height: 1.03;
 
-            <div class="preview-section-head">
+  letter-spacing: -0.052em;
+  font-weight: 650;
+}
 
-              <div>
+h3 {
+  margin: 0;
 
-                <span>
-                  Als Nächstes
-                </span>
+  font-size: 25px;
+  line-height: 1.15;
 
-                <strong>
-                  Kommende Zahlungen
-                </strong>
+  letter-spacing: -0.035em;
+}
 
-              </div>
+.simple-link {
+  color: var(--accent-dark);
 
-              <span>
-                3 offen
-              </span>
+  font-weight: 750;
+}
 
-            </div>
+.simple-link:hover {
+  text-decoration: underline;
+}
 
+.large-copy {
+  font-size: 23px !important;
+  line-height: 1.45;
 
-            <div class="preview-row">
+  color: var(--text) !important;
 
-              <div>
+  font-weight: 560;
+}
 
-                <strong>
-                  Mobilfunk
-                </strong>
 
-                <span>
-                  14. August
-                </span>
+/* HERO */
 
-              </div>
+.hero {
+  padding: 105px 0 120px;
+}
 
-              <strong>
-                19,99 €
-              </strong>
+.hero-grid {
+  display: grid;
 
-            </div>
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(360px, 0.75fr);
 
+  gap: 90px;
 
-            <div class="preview-row">
+  align-items: center;
+}
 
-              <div>
+.hero-copy {
+  max-width: 760px;
+}
 
-                <strong>
-                  Versicherung
-                </strong>
+.hero-lead {
+  max-width: 680px;
 
-                <span>
-                  18. August
-                </span>
+  margin: 34px 0 0;
 
-              </div>
+  font-size: 23px;
+  line-height: 1.5;
 
-              <strong>
-                64,80 €
-              </strong>
+  color: var(--text);
+}
 
-            </div>
+.hero-description {
+  max-width: 650px;
 
+  margin: 15px 0 0;
 
-            <div class="preview-row">
+  font-size: 17px;
 
-              <div>
+  color: var(--text-soft);
+}
 
-                <strong>
-                  Autokredit
-                </strong>
+.hero-actions {
+  margin-top: 36px;
 
-                <span>
-                  25. August
-                </span>
+  display: flex;
+  align-items: center;
 
-              </div>
+  gap: 26px;
+}
 
-              <strong>
-                319,00 €
-              </strong>
+.button {
+  display: inline-flex;
 
-            </div>
+  align-items: center;
+  justify-content: center;
 
-          </div>
+  min-height: 52px;
 
-        </div>
+  padding: 0 23px;
 
-      </div>
+  border-radius: 100px;
 
-    </section>
+  font-weight: 750;
+}
 
+.button-primary {
+  background: var(--accent);
+  color: #073e40;
+}
 
-    <!-- ===================================================
-         WARUM
-         =================================================== -->
+.hero-facts {
+  margin-top: 34px;
 
-    <section
-      class="section section-soft"
-      id="warum"
-    >
+  display: flex;
+  flex-wrap: wrap;
 
-      <div class="container">
+  gap: 12px 25px;
 
-        <p class="eyebrow">
-          Das Problem
-        </p>
+  color: var(--text-soft);
 
-        <div class="headline-grid">
+  font-size: 14px;
+}
 
-          <h2>
-            Warum sich private Finanzen oft komplizierter
-            anfühlen, als sie sein müssten.
-          </h2>
+.hero-facts span::before {
+  content: "✓";
 
-          <p>
-            Einnahmen hier, Abbuchungen dort, ein Kredit läuft
-            nebenbei und am Monatsende bleibt die Frage:
-            Wie viel Geld ist eigentlich wirklich noch frei?
-          </p>
+  margin-right: 7px;
 
-        </div>
+  color: var(--accent-dark);
 
+  font-weight: 900;
+}
 
-        <div class="problem-grid">
 
-          <article>
+/* APP PREVIEW */
 
-            <span>
-              01
-            </span>
+.app-preview {
+  padding: 25px;
 
-            <h3>
-              Kein echter Überblick
-            </h3>
+  background: var(--soft);
 
-            <p>
-              Viele kleine und große Zahlungen verteilen sich
-              über den gesamten Monat.
-            </p>
+  border: 1px solid var(--border);
+  border-radius: 28px;
+}
 
-          </article>
+.preview-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
+  margin-bottom: 22px;
+}
 
-          <article>
+.preview-brand {
+  font-size: 16px;
+  font-weight: 750;
+}
 
-            <span>
-              02
-            </span>
+.preview-plus {
+  width: 34px;
+  height: 34px;
 
-            <h3>
-              Wiederkehrende Kosten
-            </h3>
+  display: grid;
+  place-items: center;
 
-            <p>
-              Verträge, Versicherungen und Raten laufen weiter,
-              auch wenn man gerade nicht an sie denkt.
-            </p>
+  border-radius: 50%;
 
-          </article>
+  background: var(--accent-soft);
+  color: var(--accent-dark);
 
+  font-size: 22px;
+}
 
-          <article>
+.preview-main {
+  padding: 23px;
 
-            <span>
-              03
-            </span>
+  background: #ffffff;
 
-            <h3>
-              Zu viel Drumherum
-            </h3>
+  border-radius: 20px;
+}
 
-            <p>
-              Nicht jeder braucht Bankanbindung, Benutzerkonto,
-              Cloud oder ein weiteres monatliches Abo.
-            </p>
+.preview-main span,
+.preview-grid span,
+.preview-section span,
+.feature-visual span {
+  display: block;
 
-          </article>
+  color: var(--text-soft);
 
-        </div>
+  font-size: 12px;
+}
 
-      </div>
+.preview-main strong {
+  display: block;
 
-    </section>
+  margin-top: 5px;
 
+  font-size: 34px;
+  letter-spacing: -0.045em;
+}
 
-    <!-- ===================================================
-         FUNKTIONEN
-         =================================================== -->
+.preview-main small {
+  display: block;
 
-    <section
-      class="section"
-      id="funktionen"
-    >
+  margin-top: 5px;
 
-      <div class="container">
+  color: var(--text-soft);
+}
 
-        <p class="eyebrow">
-          Die Lösung
-        </p>
+.preview-grid {
+  margin-top: 12px;
 
-        <div class="headline-grid">
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-          <h2>
-            PennyPinguin bringt Ordnung in deinen Monat.
-          </h2>
+  gap: 12px;
+}
 
-          <p>
-            Kein Finanzportal und keine Bank-App.
-            PennyPinguin konzentriert sich auf einen einfachen
-            persönlichen Überblick über das, was reinkommt,
-            rausgeht und noch vor dir liegt.
-          </p>
+.preview-grid > div {
+  padding: 17px;
 
-        </div>
+  background: #ffffff;
 
+  border-radius: 18px;
+}
 
-        <!-- FEATURE 01 -->
+.preview-grid strong {
+  display: block;
 
-        <div class="feature-row">
+  margin-top: 3px;
 
-          <div class="feature-number">
-            01
-          </div>
+  font-size: 17px;
+}
 
-          <div class="feature-copy">
+.preview-section {
+  margin-top: 12px;
 
-            <h3>
-              Wissen, was wirklich frei ist.
-            </h3>
+  padding: 20px;
 
-            <p>
-              Dein freies Budget wird aus deinen geplanten
-              Einnahmen und Ausgaben berechnet. So siehst du
-              sofort, was nach deinen Kosten übrig bleibt.
-            </p>
+  background: #ffffff;
 
-          </div>
+  border-radius: 20px;
+}
 
-          <div class="feature-visual">
+.preview-section-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
 
-            <span>
-              Freies Budget
-            </span>
+  gap: 20px;
 
-            <strong>
-              1.247,50 €
-            </strong>
+  margin-bottom: 10px;
+}
 
-            <small>
-              ≈ 59,40 € pro verbleibendem Tag
-            </small>
+.preview-section-head strong {
+  display: block;
 
-          </div>
+  margin-top: 2px;
+}
 
-        </div>
+.preview-row {
+  display: flex;
+  justify-content: space-between;
 
+  gap: 18px;
 
-        <!-- FEATURE 02 -->
+  padding: 12px 0;
 
-        <div class="feature-row">
+  border-top: 1px solid var(--border);
+}
 
-          <div class="feature-number">
-            02
-          </div>
+.preview-row div strong {
+  display: block;
 
-          <div class="feature-copy">
+  font-size: 13px;
+}
 
-            <h3>
-              Zahlungen sehen, bevor sie überraschen.
-            </h3>
+.preview-row div span {
+  margin-top: 2px;
 
-            <p>
-              Einmalige und wiederkehrende Zahlungen erscheinen
-              im passenden Monat. Erledigte Zahlungen lassen sich
-              direkt abhaken.
-            </p>
+  font-size: 11px;
+}
 
-          </div>
+.preview-row > strong {
+  font-size: 13px;
+}
 
-          <div class="feature-visual payment-visual">
 
-            <div>
+/* SECTIONS */
 
-              <span>
-                Versicherung
-              </span>
+.section {
+  padding: 125px 0;
+}
 
-              <strong>
-                64,80 €
-              </strong>
+.section-soft {
+  background: var(--soft);
+}
 
-            </div>
+.headline-grid {
+  display: grid;
 
-            <div>
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(280px, 0.75fr);
 
-              <span>
-                Streaming
-              </span>
+  gap: 80px;
 
-              <strong>
-                12,99 €
-              </strong>
+  align-items: end;
+}
 
-            </div>
+.headline-grid > p {
+  margin: 0 0 6px;
 
-            <div>
+  color: var(--text-soft);
 
-              <span>
-                Autokredit
-              </span>
+  font-size: 18px;
+}
 
-              <strong>
-                319,00 €
-              </strong>
 
-            </div>
+/* PROBLEME */
 
-          </div>
+.problem-grid {
+  margin-top: 80px;
 
-        </div>
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
+  border-top: 1px solid #cfd8d6;
+}
 
-        <!-- FEATURE 03 -->
+.problem-grid article {
+  padding: 34px 30px 0 0;
+}
 
-        <div class="feature-row">
+.problem-grid article + article {
+  padding-left: 30px;
 
-          <div class="feature-number">
-            03
-          </div>
+  border-left: 1px solid #cfd8d6;
+}
 
-          <div class="feature-copy">
+.problem-grid span,
+.feature-number {
+  color: var(--accent-dark);
 
-            <h3>
-              Auch Finanzierungen bleiben übersichtlich.
-            </h3>
+  font-size: 13px;
+  font-weight: 800;
 
-            <p>
-              Behalte Rate, Gesamtsumme, bereits bezahlte
-              Raten und offene Restschuld an einem Ort im Blick.
-            </p>
+  letter-spacing: 0.08em;
+}
 
-          </div>
+.problem-grid h3 {
+  margin-top: 28px;
+}
 
-          <div class="feature-visual">
+.problem-grid p {
+  margin: 16px 0 0;
 
-            <span>
-              Autokredit
-            </span>
+  color: var(--text-soft);
+}
 
-            <strong>
-              7.018 € offen
-            </strong>
 
-            <div class="progress-track">
-              <div class="progress-fill"></div>
-            </div>
+/* FEATURE ROWS */
 
-            <small>
-              14 von 36 Raten erledigt
-            </small>
+.feature-row {
+  padding: 70px 0;
 
-          </div>
+  display: grid;
 
-        </div>
+  grid-template-columns:
+    70px
+    minmax(0, 1fr)
+    minmax(300px, 0.8fr);
 
-      </div>
+  gap: 50px;
 
-    </section>
+  align-items: center;
 
+  border-bottom: 1px solid var(--border);
+}
 
-    <!-- ===================================================
-         SO FUNKTIONIERT PENNYPINGUIN
-         =================================================== -->
+.feature-row:first-of-type {
+  margin-top: 50px;
+}
 
-    <section class="section section-dark">
+.feature-copy h3 {
+  font-size: 33px;
+}
 
-      <div class="container">
+.feature-copy p {
+  max-width: 570px;
 
-        <p class="eyebrow eyebrow-light">
-          So funktioniert PennyPinguin
-        </p>
+  margin: 18px 0 0;
 
-        <div class="headline-grid headline-grid-dark">
+  color: var(--text-soft);
 
-          <h2>
-            Von deinen Buchungen zum klaren Überblick.
-          </h2>
+  font-size: 17px;
+}
 
-          <p>
-            Du entscheidest selbst, welche Daten in
-            PennyPinguin landen. Danach übernimmt die App
-            die Übersicht.
-          </p>
+.feature-visual {
+  padding: 28px;
 
-        </div>
+  background: var(--soft);
 
+  border-radius: 20px;
+}
 
-        <div class="steps-grid">
+.feature-visual strong {
+  display: block;
 
-          <article>
+  margin-top: 5px;
 
-            <span>
-              1
-            </span>
+  font-size: 27px;
 
-            <h3>
-              Erfassen
-            </h3>
+  letter-spacing: -0.04em;
+}
 
-            <p>
-              Einnahmen und Ausgaben direkt eintragen oder
-              vorhandene Buchungen per CSV importieren.
-            </p>
+.feature-visual small {
+  display: block;
 
-          </article>
+  margin-top: 7px;
 
+  color: var(--text-soft);
+}
 
-          <article>
+.payment-visual {
+  display: grid;
+  gap: 0;
+}
 
-            <span>
-              2
-            </span>
+.payment-visual > div {
+  padding: 13px 0;
 
-            <h3>
-              Ordnen
-            </h3>
+  display: flex;
+  justify-content: space-between;
 
-            <p>
-              Buchungen passenden Kategorien zuweisen und
-              wiederkehrende Zahlungen definieren.
-            </p>
+  border-bottom: 1px solid var(--border);
+}
 
-          </article>
+.payment-visual > div:last-child {
+  border-bottom: 0;
+}
 
+.payment-visual strong {
+  margin: 0;
 
-          <article>
+  font-size: 14px;
+}
 
-            <span>
-              3
-            </span>
+.progress-track {
+  height: 8px;
 
-            <h3>
-              Überblicken
-            </h3>
+  margin-top: 20px;
 
-            <p>
-              Freies Budget, Ausgaben, Zahlungen und
-              Finanzierungen auf einen Blick sehen.
-            </p>
+  overflow: hidden;
 
-          </article>
+  background: #dbe4e3;
 
+  border-radius: 100px;
+}
 
-          <article>
+.progress-fill {
+  width: 39%;
+  height: 100%;
 
-            <span>
-              4
-            </span>
+  background: var(--accent);
+}
 
-            <h3>
-              Dranbleiben
-            </h3>
 
-            <p>
-              Mit optionalen Erinnerungen und Finanz-Checks
-              den Monat aktuell halten.
-            </p>
+/* DARK SECTION */
 
-          </article>
+.section-dark {
+  background: var(--dark);
+  color: #ffffff;
+}
 
-        </div>
+.headline-grid-dark > p {
+  color: rgba(255, 255, 255, 0.62);
+}
 
-      </div>
+.steps-grid {
+  margin-top: 80px;
 
-    </section>
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
 
+.steps-grid article {
+  min-height: 260px;
 
-    <!-- ===================================================
-         CSV
-         =================================================== -->
+  padding: 30px;
 
-    <section class="section">
+  border-top: 1px solid rgba(255, 255, 255, 0.20);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
 
-      <div class="container split-section">
+.steps-grid article:first-child {
+  border-left: 0;
+}
 
-        <div>
+.steps-grid span {
+  color: var(--accent);
 
-          <p class="eyebrow">
-            CSV-Import
-          </p>
+  font-size: 34px;
+  font-weight: 600;
+}
 
-          <h2>
-            Deine bisherigen Buchungen dürfen mitkommen.
-          </h2>
+.steps-grid h3 {
+  margin-top: 40px;
+}
 
-        </div>
+.steps-grid p {
+  margin: 16px 0 0;
 
+  color: rgba(255, 255, 255, 0.62);
+}
 
-        <div>
 
-          <p class="large-copy">
-            Du musst nicht jede vorhandene Buchung von Hand
-            neu anlegen.
-          </p>
+/* SPLIT */
 
-          <p>
-            Wähle deine CSV-Datei, ordne Datum, Beschreibung
-            und Betrag den passenden Spalten zu und
-            kategorisiere anschließend deine Buchungen.
-          </p>
+.split-section,
+.privacy-grid,
+.app-store-grid {
+  display: grid;
 
-          <p>
-            Bereits vorhandene Buchungen können erkannt und
-            beim Import übersprungen werden.
-          </p>
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(320px, 0.9fr);
 
-          <div class="inline-note">
-            Die CSV-Datei wird lokal auf deinem Gerät verarbeitet.
-          </div>
+  gap: 100px;
+}
 
-        </div>
+.split-section p:not(.eyebrow),
+.privacy-copy p,
+.app-store-copy p {
+  color: var(--text-soft);
 
-      </div>
+  font-size: 17px;
+}
 
-    </section>
+.inline-note {
+  margin-top: 30px;
 
+  padding-top: 20px;
 
-    <!-- ===================================================
-         DATENSCHUTZ
-         =================================================== -->
+  border-top: 1px solid var(--border);
 
-    <section
-      class="section privacy-section"
-      id="datenschutz"
-    >
+  color: var(--accent-dark);
 
-      <div class="container privacy-grid">
+  font-weight: 750;
+}
 
-        <div>
 
-          <p class="eyebrow">
-            Deine Daten
-          </p>
+/* PRIVACY */
 
-          <h2>
-            Privat bleibt privat.
-          </h2>
+.privacy-section {
+  background: var(--accent-soft);
+}
 
-        </div>
+.privacy-copy {
+  padding-top: 12px;
+}
 
+.privacy-copy ul {
+  margin: 30px 0;
 
-        <div class="privacy-copy">
+  padding: 0;
 
-          <p class="large-copy">
-            Deine persönlichen Finanzdaten gehören dir.
-          </p>
+  list-style: none;
 
-          <p>
-            PennyPinguin benötigt keinen Benutzeraccount und
-            keine Bankverbindung.
-          </p>
+  display: grid;
 
-          <p>
-            Deine in PennyPinguin eingegebenen Finanzdaten
-            werden lokal auf deinem iPhone verarbeitet und
-            gespeichert. Auch der CSV-Import findet direkt auf
-            deinem Gerät statt.
-          </p>
+  gap: 12px;
+}
 
-          <ul>
+.privacy-copy li {
+  padding-left: 29px;
 
-            <li>
-              Kein PennyPinguin-Account
-            </li>
+  position: relative;
 
-            <li>
-              Keine Bankanbindung
-            </li>
+  font-weight: 650;
+}
 
-            <li>
-              Keine Übertragung deiner Finanzdaten an
-              PennyPinguin-Server
-            </li>
+.privacy-copy li::before {
+  content: "✓";
 
-          </ul>
+  position: absolute;
+  left: 0;
 
-          <a
-            class="simple-link"
-            href="datenschutz.html"
-          >
-            Datenschutzerklärung →
-          </a>
+  color: var(--accent-dark);
 
-        </div>
+  font-weight: 900;
+}
 
-      </div>
 
-    </section>
+/* APP STORE */
 
+.app-store-section {
+  padding-bottom: 140px;
+}
 
-    <!-- ===================================================
-         APP STORE
-         =================================================== -->
+.store-button-placeholder {
+  display: inline-flex;
+  flex-direction: column;
 
-    <section
-      class="section app-store-section"
-      id="app-store"
-    >
+  margin-top: 25px;
 
-      <div class="container app-store-grid">
+  padding: 12px 24px;
 
-        <div>
+  background: #111111;
+  color: #ffffff;
 
-          <p class="eyebrow">
-            PennyPinguin
-          </p>
+  border-radius: 12px;
+}
 
-          <h2>
-            Einmal kaufen.<br>
-            Dauerhaft nutzen.
-          </h2>
+.store-button-placeholder small {
+  font-size: 10px;
+}
 
-        </div>
+.store-button-placeholder strong {
+  font-size: 22px;
+  line-height: 1.1;
+}
 
 
-        <div class="app-store-copy">
+/* FOOTER */
 
-          <p class="large-copy">
-            Kein monatliches Abo.
-          </p>
+.site-footer {
+  padding: 75px 0 30px;
 
-          <p>
-            PennyPinguin soll als einmalig kostenpflichtige
-            iPhone-App im Apple App Store erscheinen.
-          </p>
+  background: var(--dark);
+  color: #ffffff;
+}
 
-          <div class="store-button-placeholder">
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
 
-            <small>
-              Demnächst erhältlich im
-            </small>
+  gap: 60px;
+}
 
-            <strong>
-              App Store
-            </strong>
+.footer-brand .brand-mark {
+  background: var(--accent);
+}
 
-          </div>
+.footer-grid p {
+  max-width: 430px;
 
-        </div>
+  color: rgba(255, 255, 255, 0.55);
+}
 
-      </div>
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
 
-    </section>
+  gap: 28px;
 
-  </main>
+  align-content: start;
+}
 
+.footer-links a {
+  color: rgba(255, 255, 255, 0.72);
 
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
+  font-weight: 600;
+}
 
-  <footer class="site-footer">
+.footer-bottom {
+  margin-top: 60px;
 
-    <div class="container footer-grid">
+  padding-top: 25px;
 
-      <div>
+  display: flex;
+  justify-content: space-between;
 
-        <a
-          class="brand footer-brand"
-          href="#top"
-        >
-          <span class="brand-mark">
-            P
-          </span>
+  gap: 20px;
 
-          <span>
-            PennyPinguin
-          </span>
-        </a>
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 
-        <p>
-          Dein persönlicher Begleiter für einen bewussteren
-          Umgang mit deinen Finanzen.
-        </p>
+  color: rgba(255, 255, 255, 0.40);
 
-      </div>
+  font-size: 13px;
+}
 
 
-      <div class="footer-links">
+/* TABLET */
 
-        <a href="impressum.html">
-          Impressum
-        </a>
+@media (max-width: 950px) {
 
-        <a href="datenschutz.html">
-          Datenschutz
-        </a>
+  .navigation {
+    display: none;
+  }
 
-        <a href="support.html">
-          Support
-        </a>
+  .hero-grid,
+  .headline-grid,
+  .split-section,
+  .privacy-grid,
+  .app-store-grid {
+    grid-template-columns: 1fr;
 
-      </div>
+    gap: 50px;
+  }
 
-    </div>
+  .hero {
+    padding-top: 80px;
+  }
 
+  .app-preview {
+    max-width: 540px;
+  }
 
-    <div class="container footer-bottom">
+  .problem-grid {
+    grid-template-columns: 1fr;
+  }
 
-      <span>
-        © 2026 PennyPinguin
-      </span>
+  .problem-grid article,
+  .problem-grid article + article {
+    padding: 30px 0;
 
-      <span>
-        Für iPhone entwickelt.
-      </span>
+    border-left: 0;
+    border-bottom: 1px solid #cfd8d6;
+  }
 
-    </div>
+  .feature-row {
+    grid-template-columns:
+      50px
+      1fr;
 
-  </footer>
+    gap: 30px;
+  }
 
-</body>
-</html>
+  .feature-visual {
+    grid-column: 2;
+  }
+
+  .steps-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .steps-grid article:nth-child(3) {
+    border-left: 0;
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  .container {
+    width: min(
+      calc(100% - 30px),
+      var(--container)
+    );
+  }
+
+  .header-inner {
+    min-height: 68px;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .brand {
+    font-size: 17px;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .hero {
+    padding: 65px 0 80px;
+  }
+
+  h1 {
+    font-size: clamp(48px, 15vw, 63px);
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  .hero-lead {
+    margin-top: 27px;
+
+    font-size: 19px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+
+    gap: 17px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .hero-facts {
+    display: grid;
+
+    gap: 7px;
+  }
+
+  .app-preview {
+    padding: 17px;
+
+    border-radius: 22px;
+  }
+
+  .preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 85px 0;
+  }
+
+  .headline-grid {
+    gap: 28px;
+  }
+
+  .headline-grid > p {
+    font-size: 16px;
+  }
+
+  .problem-grid {
+    margin-top: 50px;
+  }
+
+  .feature-row {
+    padding: 50px 0;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .feature-number {
+    grid-column: 1;
+  }
+
+  .feature-visual {
+    grid-column: 1;
+  }
+
+  .feature-copy h3 {
+    font-size: 29px;
+  }
+
+  .steps-grid {
+    margin-top: 50px;
+
+    grid-template-columns: 1fr;
+  }
+
+  .steps-grid article,
+  .steps-grid article:nth-child(3) {
+    min-height: unset;
+
+    padding: 28px 0;
+
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .steps-grid h3 {
+    margin-top: 22px;
+  }
+
+  .split-section,
+  .privacy-grid,
+  .app-store-grid {
+    gap: 35px;
+  }
+
+  .footer-grid,
+  .footer-bottom {
+    flex-direction: column;
+  }
+
+  .footer-links {
+    flex-direction: column;
+
+    gap: 13px;
+  }
+
+}
