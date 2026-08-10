@@ -11,7 +11,6 @@
   --border: #dfe6e4;
 
   --dark: #152224;
-  --dark-soft: #223234;
 
   --container: 1180px;
 }
@@ -28,7 +27,6 @@ html {
 
 body {
   margin: 0;
-
   background: var(--white);
   color: var(--text);
 
@@ -468,7 +466,7 @@ h3 {
 
 
 /* =========================================================
-   SECTIONS
+   ALLGEMEINE SEKTIONEN
    ========================================================= */
 
 .section {
@@ -501,13 +499,13 @@ h3 {
 
 
 /* =========================================================
-   EMOJI BADGES
+   EMOJI-BADGES
    ========================================================= */
 
 .emoji-badge,
 .feature-icon {
-  width: 58px;
-  height: 58px;
+  width: 62px;
+  height: 62px;
 
   display: inline-flex;
   align-items: center;
@@ -517,17 +515,20 @@ h3 {
 
   background: var(--accent-soft);
 
-  border: 1px solid rgba(34, 199, 201, 0.20);
+  border: 1px solid rgba(34, 199, 201, 0.22);
 
   border-radius: 18px;
 
-  font-size: 27px;
+  font-size: 29px;
 
   line-height: 1;
+
+  box-shadow:
+    0 7px 20px rgba(26, 79, 81, 0.05);
 }
 
 .emoji-badge {
-  margin-bottom: 24px;
+  margin-bottom: 25px;
 }
 
 .emoji-badge-dark {
@@ -535,11 +536,13 @@ h3 {
 
   border:
     1px solid rgba(255, 255, 255, 0.14);
+
+  box-shadow: none;
 }
 
 
 /* =========================================================
-   PROBLEM
+   PROBLEM-BEREICH
    ========================================================= */
 
 .problem-grid {
@@ -554,7 +557,7 @@ h3 {
 }
 
 .problem-grid article {
-  padding: 38px 30px 0 0;
+  padding: 40px 30px 0 0;
 }
 
 .problem-grid article + article {
@@ -571,11 +574,13 @@ h3 {
   margin: 16px 0 0;
 
   color: var(--text-soft);
+
+  font-size: 16px;
 }
 
 
 /* =========================================================
-   FEATURE ROWS
+   FUNKTIONS-BEREICH
    ========================================================= */
 
 .feature-row {
@@ -701,7 +706,7 @@ h3 {
 
 
 /* =========================================================
-   DARK SECTION
+   SO FUNKTIONIERT PENNYPINGUIN
    ========================================================= */
 
 .section-dark {
@@ -726,7 +731,7 @@ h3 {
 .steps-grid article {
   min-height: 280px;
 
-  padding: 32px;
+  padding: 34px;
 
   border-top:
     1px solid rgba(255, 255, 255, 0.20);
@@ -741,6 +746,8 @@ h3 {
 
 .steps-grid h3 {
   margin-top: 0;
+
+  font-size: 27px;
 }
 
 .steps-grid p {
@@ -788,7 +795,7 @@ h3 {
 
 
 /* =========================================================
-   PRIVACY
+   DATENSCHUTZ
    ========================================================= */
 
 .privacy-section {
@@ -999,7 +1006,7 @@ h3 {
 
   .feature-row {
     grid-template-columns:
-      58px
+      62px
       1fr;
 
     gap: 30px;
@@ -1149,12 +1156,12 @@ h3 {
 
   .emoji-badge,
   .feature-icon {
-    width: 54px;
-    height: 54px;
+    width: 56px;
+    height: 56px;
 
     border-radius: 16px;
 
-    font-size: 25px;
+    font-size: 26px;
   }
 
   .feature-row {
