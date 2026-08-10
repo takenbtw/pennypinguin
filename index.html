@@ -42,9 +42,25 @@
     content="https://pennypinguin.de/"
   >
 
+  <meta
+    property="og:image"
+    content="https://pennypinguin.de/pennypinguin.png"
+  >
+
   <link
     rel="canonical"
     href="https://pennypinguin.de/"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="pennypinguin.png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="pennypinguin.png"
   >
 
   <link
@@ -55,10 +71,6 @@
 
 <body>
 
-  <!-- =====================================================
-       HEADER
-       ===================================================== -->
-
   <header class="site-header">
 
     <div class="container header-inner">
@@ -68,9 +80,11 @@
         href="#top"
         aria-label="PennyPinguin Startseite"
       >
-        <span class="brand-mark">
-          P
-        </span>
+        <img
+          src="pennypinguin.png"
+          alt=""
+          class="brand-logo"
+        >
 
         <span>
           PennyPinguin
@@ -106,15 +120,7 @@
   </header>
 
 
-  <!-- =====================================================
-       MAIN
-       ===================================================== -->
-
   <main id="top">
-
-    <!-- ===================================================
-         HERO
-         =================================================== -->
 
     <section class="hero">
 
@@ -179,22 +185,17 @@
         </div>
 
 
-        <div class="app-preview">
+        <div class="hero-mascot-area">
 
-          <div class="preview-top">
+          <div class="hero-mascot-background"></div>
 
-            <span class="preview-brand">
-              🐧 PennyPinguin
-            </span>
+          <img
+            src="pennypinguin.png"
+            alt="PennyPinguin Maskottchen"
+            class="hero-mascot"
+          >
 
-            <span class="preview-plus">
-              +
-            </span>
-
-          </div>
-
-
-          <div class="preview-main">
+          <div class="hero-mini-card hero-card-one">
 
             <span>
               Freies Budget
@@ -204,126 +205,17 @@
               1.247,50 €
             </strong>
 
-            <small>
-              nach allen geplanten Einnahmen und Ausgaben
-            </small>
-
           </div>
 
+          <div class="hero-mini-card hero-card-two">
 
-          <div class="preview-grid">
+            <span>
+              Nächste Zahlung
+            </span>
 
-            <div>
-
-              <span>
-                Einnahmen
-              </span>
-
-              <strong>
-                3.250 €
-              </strong>
-
-            </div>
-
-            <div>
-
-              <span>
-                Ausgaben
-              </span>
-
-              <strong>
-                2.002,50 €
-              </strong>
-
-            </div>
-
-          </div>
-
-
-          <div class="preview-section">
-
-            <div class="preview-section-head">
-
-              <div>
-
-                <span>
-                  Als Nächstes
-                </span>
-
-                <strong>
-                  Kommende Zahlungen
-                </strong>
-
-              </div>
-
-              <span>
-                3 offen
-              </span>
-
-            </div>
-
-
-            <div class="preview-row">
-
-              <div>
-
-                <strong>
-                  Mobilfunk
-                </strong>
-
-                <span>
-                  14. August
-                </span>
-
-              </div>
-
-              <strong>
-                19,99 €
-              </strong>
-
-            </div>
-
-
-            <div class="preview-row">
-
-              <div>
-
-                <strong>
-                  Versicherung
-                </strong>
-
-                <span>
-                  18. August
-                </span>
-
-              </div>
-
-              <strong>
-                64,80 €
-              </strong>
-
-            </div>
-
-
-            <div class="preview-row">
-
-              <div>
-
-                <strong>
-                  Autokredit
-                </strong>
-
-                <span>
-                  25. August
-                </span>
-
-              </div>
-
-              <strong>
-                319,00 €
-              </strong>
-
-            </div>
+            <strong>
+              64,80 €
+            </strong>
 
           </div>
 
@@ -333,10 +225,6 @@
 
     </section>
 
-
-    <!-- ===================================================
-         WARUM
-         =================================================== -->
 
     <section
       class="section section-soft"
@@ -427,10 +315,6 @@
     </section>
 
 
-    <!-- ===================================================
-         FUNKTIONEN
-         =================================================== -->
-
     <section
       class="section"
       id="funktionen"
@@ -457,8 +341,6 @@
 
         </div>
 
-
-        <!-- FEATURE 01 -->
 
         <div class="feature-row">
 
@@ -498,8 +380,6 @@
 
         </div>
 
-
-        <!-- FEATURE 02 -->
 
         <div class="feature-row">
 
@@ -564,8 +444,6 @@
         </div>
 
 
-        <!-- FEATURE 03 -->
-
         <div class="feature-row">
 
           <div class="feature-number">
@@ -611,10 +489,6 @@
 
     </section>
 
-
-    <!-- ===================================================
-         SO FUNKTIONIERT PENNYPINGUIN
-         =================================================== -->
 
     <section class="section section-dark">
 
@@ -719,10 +593,6 @@
     </section>
 
 
-    <!-- ===================================================
-         CSV
-         =================================================== -->
-
     <section class="section">
 
       <div class="container split-section">
@@ -769,10 +639,6 @@
     </section>
 
 
-    <!-- ===================================================
-         DATENSCHUTZ
-         =================================================== -->
-
     <section
       class="section privacy-section"
       id="datenschutz"
@@ -789,6 +655,12 @@
           <h2>
             Privat bleibt privat.
           </h2>
+
+          <img
+            src="pennypinguin.png"
+            alt=""
+            class="privacy-mascot"
+          >
 
         </div>
 
@@ -841,10 +713,6 @@
 
     </section>
 
-
-    <!-- ===================================================
-         APP STORE
-         =================================================== -->
 
     <section
       class="section app-store-section"
@@ -899,10 +767,6 @@
   </main>
 
 
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
-
   <footer class="site-footer">
 
     <div class="container footer-grid">
@@ -913,9 +777,11 @@
           class="brand footer-brand"
           href="#top"
         >
-          <span class="brand-mark">
-            P
-          </span>
+          <img
+            src="pennypinguin.png"
+            alt=""
+            class="brand-logo footer-logo"
+          >
 
           <span>
             PennyPinguin
