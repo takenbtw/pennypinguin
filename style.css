@@ -542,7 +542,7 @@ h3 {
 
 
 /* =========================================================
-   PROBLEM-BEREICH
+   ÜBERBLICK
    ========================================================= */
 
 .problem-grid {
@@ -580,7 +580,7 @@ h3 {
 
 
 /* =========================================================
-   FUNKTIONS-BEREICH
+   FUNKTIONEN
    ========================================================= */
 
 .feature-row {
@@ -683,6 +683,8 @@ h3 {
   margin: 0;
 
   font-size: 16px;
+
+  letter-spacing: 0;
 }
 
 .progress-track {
@@ -706,7 +708,7 @@ h3 {
 
 
 /* =========================================================
-   SO FUNKTIONIERT PENNYPINGUIN
+   DUNKLER ABLAUF-BEREICH
    ========================================================= */
 
 .section-dark {
@@ -758,7 +760,7 @@ h3 {
 
 
 /* =========================================================
-   SPLIT SECTIONS
+   SPLIT-SEKTIONEN
    ========================================================= */
 
 .split-section,
@@ -858,30 +860,24 @@ h3 {
   padding-bottom: 140px;
 }
 
-.store-button-placeholder {
+.store-status {
   display: inline-flex;
+  align-items: center;
 
-  flex-direction: column;
+  margin-top: 24px;
 
-  margin-top: 25px;
+  padding: 13px 18px;
 
-  padding: 12px 24px;
+  background: var(--accent-soft);
 
-  background: #111111;
+  border: 1px solid rgba(34, 199, 201, 0.24);
 
-  color: #ffffff;
+  border-radius: 14px;
 
-  border-radius: 12px;
-}
+  color: #17484a;
 
-.store-button-placeholder small {
-  font-size: 10px;
-}
-
-.store-button-placeholder strong {
-  font-size: 22px;
-
-  line-height: 1.1;
+  font-size: 14px;
+  font-weight: 750;
 }
 
 
@@ -957,6 +953,14 @@ h3 {
   color: rgba(255, 255, 255, 0.40);
 
   font-size: 13px;
+}
+
+.footer-bottom a {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.footer-bottom a:hover {
+  color: #ffffff;
 }
 
 
@@ -1216,6 +1220,10 @@ h3 {
     width: 130px;
 
     margin-top: 25px;
+  }
+
+  .store-status {
+    width: 100%;
   }
 
   .footer-grid,
